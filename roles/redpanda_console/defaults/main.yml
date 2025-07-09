@@ -8,6 +8,7 @@ kafka_connect_port: 8083
 
 http_port: 8080
 https_port: 443
+console_listen_address: "0.0.0.0"
 
 redpanda_group: redpanda
 redpanda_user: redpanda

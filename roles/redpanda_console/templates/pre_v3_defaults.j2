@@ -53,9 +53,11 @@
       }
       {% endif %}
     }
-  }{% if enable_tls | default(false) %},
+  },
   "server": {
+    "listenAddress": "{{ console_listen_address }}",
     "listenPort": {{ http_port }},
+    {% if enable_tls | default(false) %}
     "httpsListenPort": {{ https_port }},
     "tls": {
       "enabled": true,

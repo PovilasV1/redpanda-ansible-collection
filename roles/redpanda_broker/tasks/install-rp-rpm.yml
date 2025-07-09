@@ -3,7 +3,7 @@
   ansible.builtin.set_fact:
     redpanda_version_suffix: "{{ '' if redpanda_version == 'latest' else '-' + redpanda_version }}"
     needs_split_packages: >-
-      {{ redpanda_version == 'latest' or 
+      {{ redpanda_version == 'latest' or
          (redpanda_version is version('24.2.0', '>=')) or
          development_build | default(false) | bool }}
     allow_lower_version: "{{ development_build | default(false) | bool }}"
