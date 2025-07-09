@@ -53,15 +53,17 @@
       }
       {% endif %}
     }
-  }{% if enable_tls | default(false) %},
+  },
   "server": {
+    "listenAddress": "{{ console_listen_address }}",
     "listenPort": {{ http_port }},
+    {% if enable_tls | default(false) %}
     "httpsListenPort": {{ https_port }},
     "tls": {
       "enabled": true,
       "certFilepath": "{{ console_cert_file }}",
       "keyFilepath": "{{ console_key_file }}"
-    }
+    }{% endif %}
   }{% endif %}{% if kafka_connect_advertised_ips is defined %},
     "connect": {
     "enabled": true,

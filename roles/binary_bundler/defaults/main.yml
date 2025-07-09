@@ -4,6 +4,7 @@ download_directory: "/tmp"
 
 # required config from user:
 redpanda_version: ""
+redpanda_console_version: ""
 is_using_unstable: false
 basearch: ""
 os_distribution: ""
