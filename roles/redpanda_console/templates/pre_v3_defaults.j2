@@ -64,7 +64,7 @@
       "certFilepath": "{{ console_cert_file }}",
       "keyFilepath": "{{ console_key_file }}"
     }{% endif %}
-  }{% endif %}{% if kafka_connect_advertised_ips is defined %},
+  }{% if kafka_connect_advertised_ips is defined %},
     "connect": {
     "enabled": true,
     "clusters":
